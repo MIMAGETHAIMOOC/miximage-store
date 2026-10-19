@@ -1340,13 +1340,13 @@ section {
               <span style="color:#b45309; font-weight:600;">(ข้างธนาคารกสิกรไทย สาขาบรบือ)</span>
             </p>
             <div style="font-size:13.5px; display:flex; flex-direction:column; gap:6px; color:var(--text-secondary); margin-bottom:14px;">
-              <div>🟢 <strong>LINE ID:</strong> <code style="color:#15803d; font-weight:700;">miximage</code> <button type="button" onclick="copyText('miximage', 'คัดลอก LINE ID: miximage แล้ว')" style="margin-left:6px; padding:2px 8px; border-radius:6px; border:1px solid rgba(0,0,0,0.2); background:rgba(255,255,255,0.8); color:#090a0f; cursor:pointer; font-size:11.5px;">คัดลอก ID</button></div>
+              <div>🟢 <strong>LINE OA ID:</strong> <code style="color:#15803d; font-weight:700; font-size:14px;">@919zkplo</code> <button type="button" onclick="copyText('@919zkplo', 'คัดลอก LINE Official ID: @919zkplo แล้ว')" style="margin-left:6px; padding:2px 8px; border-radius:6px; border:1px solid rgba(0,0,0,0.2); background:rgba(255,255,255,0.8); color:#090a0f; cursor:pointer; font-size:11.5px;">คัดลอก ID</button></div>
               <div>📞 <strong>โทรศัพท์:</strong> 081-592-1229 / 081-591-2129</div>
               <div>✉️ <strong>อีเมล:</strong> kmz.miximage@gmail.com</div>
               <div>🕒 <strong>เวลาบริการออนไลน์:</strong> 10.00 – 22.00 น. ทุกวัน</div>
             </div>
-            <a href="https://line.me/ti/p/~miximage" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="width:100%;">
-              แอด LINE: miximage เพื่อคุยกับโปรดิวเซอร์
+            <a href="https://line.me/R/ti/p/@919zkplo" target="_blank" rel="noopener noreferrer" class="btn btn-line" style="width:100%; font-size:15px;">
+              แอด LINE OA: @919zkplo เพื่อคุยกับโปรดิวเซอร์
             </a>
           </div>
         </div>
@@ -1359,7 +1359,7 @@ section {
       <div>
         <div style="font-weight:800; font-size:16px;">MIX IMAGE ART&amp;AUDIO (ร้านสร้างภาพ อ.บรบือ จ.มหาสารคาม)</div>
         <div style="font-size:13px; color:var(--text-muted); margin-top:4px;">
-          477 หมู่ 1 ถนนแจ้งสนิท ต.บรบือ อ.บรบือ จ.มหาสารคาม 44130 • LINE: miximage • โทร 081-592-1229
+          477 หมู่ 1 ถนนแจ้งสนิท ต.บรบือ อ.บรบือ จ.มหาสารคาม 44130 • LINE OA: @919zkplo • โทร 081-592-1229
         </div>
       </div>
       <div style="display:flex; gap:12px;">
@@ -1368,8 +1368,8 @@ section {
     </div>
   </footer>
 
-  <a href="https://line.me/ti/p/~miximage" target="_blank" rel="noopener noreferrer" class="floating-line">
-    <span>💬</span> LINE: miximage
+  <a href="https://line.me/R/ti/p/@919zkplo" target="_blank" rel="noopener noreferrer" class="floating-line">
+    <span>💬</span> LINE OA: @919zkplo
   </a>
 
   <div id="toastBanner" class="toast-banner" role="status" aria-live="polite">
@@ -1501,9 +1501,14 @@ section {
 
     function copyMusicAndOpenLine() {
       updateMusicSummary();
-      copyText(document.getElementById('generatedMusicText').value, 'คัดลอกบรีฟเพลงแล้ว กำลังเปิดแชท LINE: miximage...');
+      const text = document.getElementById('generatedMusicText').value;
+      copyText(text, 'คัดลอกบรีฟเพลงแล้ว กำลังเปิดแชท LINE OA: @919zkplo...');
       setTimeout(() => {
-        window.open('https://line.me/ti/p/~miximage', '_blank', 'noopener');
+        const directUrl = 'https://line.me/R/oaMessage/@919zkplo/?' + encodeURIComponent(text);
+        const win = window.open(directUrl, '_blank', 'noopener');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.open('https://line.me/R/ti/p/@919zkplo', '_blank', 'noopener');
+        }
       }, 450);
     }
 
